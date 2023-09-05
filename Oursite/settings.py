@@ -131,7 +131,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT =BASE_DIR/'static'
 STATICFILES_DIRS =[
-    'oursite/static'
+    'static'
 ]
 #media file configuration
 STATIC_URL = '/media/'
