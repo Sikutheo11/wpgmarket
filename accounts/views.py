@@ -48,6 +48,7 @@ def registerUser(request):
             user.set_password(password)
             user.role = User.CUSTOMER
             user.save()
+            messages.warning(request, 'You are register secussfully!')
 
             # # Create the user using create_user method
             # first_name = form.cleaned_data['first_name']
