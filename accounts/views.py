@@ -5,7 +5,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.utils.http import urlsafe_base64_decode
 
-# from vendor.forms import VendorForm
+from vendor.forms import VendorForm
 from .forms import UserForm
 from .models import User, UserProfile
 from django.contrib import messages, auth
@@ -13,7 +13,7 @@ from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 from django.core.exceptions import PermissionDenied
-# from vendor.models import Vendor
+from vendor.models import Vendor
 from django.template.defaultfilters import slugify
 # from orders.models import Order
 # import datetime
@@ -49,6 +49,7 @@ def registerUser(request):
             user.role = User.CUSTOMER
             user.save()
             messages.warning(request, 'You are register secussfully!')
+            return redirect('registerUser')
 
             # # Create the user using create_user method
             # first_name = form.cleaned_data['first_name']
@@ -78,11 +79,11 @@ def registerUser(request):
     return render(request, 'accounts/registerUser.html', context)
 
 
-# def registerVendor(request):
+def registerVendor(request):
 #     if request.user.is_authenticated:
 #         messages.warning(request, 'You are already logged in!')
 #         return redirect('myAccount')
-#     elif request.method == 'POST':
+    # if request.method == 'POST':
 #         # store the data and create the user
 #         form = UserForm(request.POST)
 #         v_form = VendorForm(request.POST, request.FILES)
@@ -114,15 +115,15 @@ def registerUser(request):
 #             print('invalid form')
 #             print(form.errors)
 #     else:
-#         form = UserForm()
-#         v_form = VendorForm()
+    form = UserForm()
+    v_form = VendorForm()
 
-#     context = {
-#         'form': form,
-#         'v_form': v_form,
-#     }
+    context = {
+        'form': form,
+        'v_form': v_form,
+    }
 
-#     return render(request, 'accounts/registerVendor.html', context)
+    return render(request, 'accounts/registerVendor.html', context)
 
 
 # def activate(request, uidb64, token):

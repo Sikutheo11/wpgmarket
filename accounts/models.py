@@ -90,8 +90,8 @@ class User(AbstractBaseUser):
 
 class UserProfile(models.Model):
     user = OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
-    profile_picture = models.ImageField(upload_to='users/profile_pictures', blank=True, null=True)
-    cover_photo = models.ImageField(upload_to='users/cover_photos', blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='media/users/profile_pictures', blank=True, null=True)
+    cover_photo = models.ImageField(upload_to='media/users/cover_photos', blank=True, null=True)
     country = models.CharField(max_length=15, blank=True, null=True)
     province = models.CharField(max_length=15, blank=True, null=True)
     district = models.CharField(max_length=15, blank=True, null=True)
@@ -103,14 +103,14 @@ class UserProfile(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
 
     def full_address(self):
-        return f'{self.sector}, {self.celll}'
+        return f'{self.district}, {self.sector}'
 
     def __str__(self):
         return self.user.email
 
 
-    def save(self, *args, **kwargs):
-        if self.latitude and self.longitude:
-            self.location = Point(float(self.longitude), float(self.latitude))
-            return super(UserProfile, self).save(*args, **kwargs)
-        return super(UserProfile, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if self.latitude and self.longitude:
+    #         self.location = Point(float(self.longitude), float(self.latitude))
+    #         return super(UserProfile, self).save(*args, **kwargs)
+    #     return super(UserProfile, self).save(*args, **kwargs)
