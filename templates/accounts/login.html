@@ -29,22 +29,15 @@ Already verified? <a href="{% url 'login' %}">Login</a>
           </div> <!-- form-group// -->
           <div class="form-group">
 			<input type="password" class="form-control" placeholder="Password" name="password">
-          </div> <!-- form-group// -->
-
-          <div class="form-group">
-          	{% comment %} <a href="{% url 'forgotPassword' %}" class="float-right">Forgot password?</a> {% endcomment %}
-
-          </div> <!-- form-group form-check .// -->
+          </div> <!-- form-group// -->          
           <div class="form-group">
               <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+              <p class="text-center mt-4">Forgot Your Password?  <a href="{% url 'forgot_password' %}">Reset Your password</a></p>
           </div> <!-- form-group// -->
       </form>
       </div> <!-- card-body.// -->
     </div> <!-- card .// -->
 
-     <p class="text-center mt-4">If you don't have account as Customer  <a href="{% url 'registerUser' %}">Sign up Here</a></p>     
-     <p class="text-center mt-4">If you don't have account as Vendor  <a href="{% url 'registerVendor' %}">Sign up Here</a></p>
-     <br><br>
 <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
 {% endif %}
 
