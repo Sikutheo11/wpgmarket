@@ -34,7 +34,22 @@
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="{% url 'login' %}"><i class="fa fa-user"></i> Login</a>                            
+                            <div class="header__top__right__language">
+                                {% comment %} <img src="{% statsic 'img/language.png' %}" alt=""> {% endcomment %}
+                                <div class="fa fa-user">Account</div>                                
+                                <ul>
+                                    {% if user.is_authenticated %}
+                                    <li><a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'myAccount' %}">My Account</a></li>
+                                    <li><a class="cs-color cs-popup-joinus-btn login-popup text-danger" href="{% url 'logout' %}">Logout</a></li>
+                                    {% else %}
+                                    <li><a href="{% url 'registerUser'%}"> Register</a></li>
+                                    <li><a href="{% url 'login' %}">login</a></li>
+                                    <li><a href="#">French</a></li>
+                                    <li><a href="#">Kinyarwanda</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            {% comment %} <a href="{% url 'registerUser' %}"><i class="fa fa-user"></i> Login</a>                             {% endcomment %}
                         </div>
                     </div>
                 </div>
