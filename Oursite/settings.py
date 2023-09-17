@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 
     'accounts',
     'vendor',
-    'category',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -167,7 +167,8 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Allin Market <wooddjango@gmail.com>'
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
-GOOGLE_API_KEY = config('GOOGLE_API_KEY')
+GOOGLE_API_KEY = 'AIzaSyD7jolWI6kPKTJJ9zpKJ_IyelrMYdJbiEE'
+# config('GOOGLE_API_KEY')
 
 # if DEBUG == True:
 #     os.environ['PATH'] = os.path.join(BASE_DIR, 'env\Lib\site-packages\osgeo') + ';' + os.environ['PATH']

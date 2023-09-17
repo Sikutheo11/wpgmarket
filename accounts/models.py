@@ -96,14 +96,14 @@ class UserProfile(models.Model):
     province = models.CharField(max_length=15, blank=True, null=True)
     district = models.CharField(max_length=15, blank=True, null=True)
     sector = models.CharField(max_length=250, blank=True, null=True)
-    # address = gismodels.PointField(blank=True, null=True, srid=4326)
+    address = models.CharField(max_length=250, blank=True, null=True)
     latitude = models.CharField(max_length=20, blank=True, null=True)
     longitude = models.CharField(max_length=20, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
 
-    def full_address(self):
-        return f'{self.district}, {self.sector}'
+    # def full_address(self):
+    #     return f'{self.district}, {self.sector}'
 
     def __str__(self):
         return self.user.email
