@@ -96,7 +96,7 @@ class UserProfile(models.Model):
     province = models.CharField(max_length=15, blank=True, null=True)
     district = models.CharField(max_length=15, blank=True, null=True)
     sector = models.CharField(max_length=250, blank=True, null=True)
-    # trading_center = gismodels.PointField(blank=True, null=True, srid=4326)
+    # address = gismodels.PointField(blank=True, null=True, srid=4326)
     latitude = models.CharField(max_length=20, blank=True, null=True)
     longitude = models.CharField(max_length=20, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

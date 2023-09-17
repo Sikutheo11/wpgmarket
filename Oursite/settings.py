@@ -71,6 +71,12 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'accounts.context_processors.get_vendor',
+                'accounts.context_processors.get_google_api',
+                # 'marketplace.context_processors.get_cart_counter',
+                # 'marketplace.context_processors.get_cart_amounts',
+                # 'accounts.context_processors.get_user_profile',
+                # 'accounts.context_processors.get_paypal_client_id',
             ],
         },
     },
@@ -158,9 +164,10 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Allin Marketplace <sikuthe11@gmail.com>'
+DEFAULT_FROM_EMAIL = 'Allin Market <wooddjango@gmail.com>'
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
-# GOOGLE_API_KEY = config('GOOGLE_API_KEY')
+GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 
 # if DEBUG == True:
 #     os.environ['PATH'] = os.path.join(BASE_DIR, 'env\Lib\site-packages\osgeo') + ';' + os.environ['PATH']

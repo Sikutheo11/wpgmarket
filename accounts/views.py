@@ -73,7 +73,7 @@ def registerUser(request):
             print(form.errors)
     else:
         form = UserForm()
-    context = {
+    context = {        
         'form': form,
     }
     return render(request, 'accounts/registerUser.html', context)
@@ -84,7 +84,7 @@ def registerVendor(request):
         messages.warning(request, 'You are already logged in!')
         return redirect('myAccount')
     elif request.method == 'POST':
-#         # store the data and create the user
+        # store the data and create the user
         form = UserForm(request.POST)
         v_form = VendorForm(request.POST, request.FILES)
         if form.is_valid() and v_form.is_valid:
@@ -117,32 +117,30 @@ def registerVendor(request):
     else:
         form = UserForm()
         v_form = VendorForm()
-
-        context = {
-            'form': form,
-            'v_form': v_form,
-        }
-
+    context = {
+        'form': form,
+        'v_form': v_form,
+    }
     return render(request, 'accounts/registerVendor.html', context)
 
 
 def activate(request, uidb64, token):
-#     # Activate the user by setting the is_active status to True
-#     try:
-#         uid = urlsafe_base64_decode(uidb64).decode()
-#         user = User._default_manager.get(pk=uid)
-#     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-#         user = None
+    # Activate the user by setting the is_active status to True
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = User._default_manager.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
 
-#     if user is not None and default_token_generator.check_token(user, token):
-#         user.is_active = True
-#         user.save()
-#         messages.success(request, 'Congratulation! Your account is activated.')
-#         return redirect('myAccount')
-#     else:
-#         messages.error(request, 'Invalid activation link')
-        # return redirect('myAccount')
-        pass
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        messages.success(request, 'Congratulation! Your account is activated.')
+        return redirect('myAccount')
+    else:
+        messages.error(request, 'Invalid activation link')
+        return redirect('myAccount')
+        
         
 
 def login(request):
