@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<!-- Main Section Start -->
+
+<div class="row">	
+	{% for product in products %}
+	<div class="col-md-2">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+
+				<a href="{{ product.get_url }}"><img src="{{ product.image.url }}"></a>
+
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="{{ product.get_url }}" class="title">{{ product.product_title }}</a>
+					{% comment %} <div class="price-wrap mt-2">
+						<span class="price">$ {{ product.price }}</span>
+					</div> <!-- price-wrap.// -->
+                    <div class="price-wrap mt-2">
+						<span class="price">Company:{{ product.vendor }}</span>
+					</div> <!-- price-wrap.// --> {% endcomment %}
+				</div>
+				<a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Details </a>
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+	{% endfor %}	
+</div> <!-- row end.// -->
+{% endblock %}

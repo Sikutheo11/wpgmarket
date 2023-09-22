@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<!-- Main Section Start -->
+
+<div class="row">
+	{% if products %}
+	{% for product in products %}
+	<div class="col-md-2">
+		<figure class="card card-product-grid">
+			<div class="img-wrap">
+
+				<a href="#"><img src="{{ product.image.url }}"></a>
+
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					<a href="#" class="title">{{ product.product_title }}</a>
+					<div class="price-wrap mt-2">
+						<span class="price">$ {{ product.price }}</span>
+					</div> <!-- price-wrap.// -->
+                    <div class="price-wrap mt-2">
+						<span class="price">Company:{{ product.vendor }}</span>
+					</div> <!-- price-wrap.// -->
+				</div>
+				<a href="#" class="btn btn-block btn-primary">View Details </a>
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+	{% endfor %}
+	{% else %}
+	<div>
+		<h2>No result found. Please try again.</h2>
+	</div>
+	{% endif %}
+</div> <!-- row end.// -->
+
+{% endblock %}

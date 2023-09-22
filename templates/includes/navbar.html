@@ -7,32 +7,24 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="header__top__left">
                         <ul>
-                            <li><i class="fa fa-envelope"></i> info@wpg.com</li>
-                            <li>Free Shipping for all Order of frw 150,000</li>
+                            <li><i class="fa fa-envelope"></i> info@wpg.com</li>                            
+                            <a href="" class="info btn"><li> Our Business Partners</li></a>
+                            <a href="{% url  'registerVendor' %}" class="btn btn-outline-info"><li> sell</li></a>
                         </ul>
+                        
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="header__top__right">
+                <div class="col-lg-6 col-md-6">                    
+                    <div class="header__top__right">  
+                        <a href="{% url 'marketplace' %}" class="btn btn-outline-danger text-uppercase font-weight-bold">Shop Now</a>                      
                         <div class="header__top__right__social">
-                            <a href="https://github.com/dev-rathankumar/foodOnline/blob/main/foodOnline_main/settings.py"><i class="fa fa-facebook"></i></a>
+                            <a href="#"<i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
                             <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                        <div class="header__top__right__language">
-                            <img src="{% static 'img/language.png' %}" alt="">
-                            <div>English</div>
-                            <span class="arrow_carrot-down"></span>
-                            <ul>
-                                <li><a href="#">Swahile</a></li>
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">French</a></li>
-                                <li><a href="#">Kinyarwanda</a></li>
-                            </ul>
-                        </div>
+                        </div>                        
                         <div class="header__top__right__auth">
                             <div class="header__top__right__language">
                                 {% comment %} <img src="{% statsic 'img/language.png' %}" alt=""> {% endcomment %}

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'vendor',
     'products',
+    'marketplace'
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ TEMPLATES = [
                 # 'marketplace.context_processors.get_cart_amounts',
                 # 'accounts.context_processors.get_user_profile',
                 # 'accounts.context_processors.get_paypal_client_id',
+                'products.context_processors.Product_links',
             ],
         },
     },
