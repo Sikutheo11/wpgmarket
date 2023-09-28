@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'accounts',
     'vendor',
     'products',
-    'marketplace'
+    'marketplace',    
 ]
 
 MIDDLEWARE = [
@@ -74,7 +74,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'accounts.context_processors.get_vendor',
                 'accounts.context_processors.get_google_api',
-                # 'marketplace.context_processors.get_cart_counter',
+                'marketplace.context_processors.get_cart_counter',
                 # 'marketplace.context_processors.get_cart_amounts',
                 # 'accounts.context_processors.get_user_profile',
                 # 'accounts.context_processors.get_paypal_client_id',

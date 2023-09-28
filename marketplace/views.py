@@ -100,29 +100,30 @@ def product_detail(request, category_slug, product_slug):
     # return render(request, 'marketplace/category_detail.html', context)
 
 
-# def add_to_cart(request, food_id):
+# def add_to_cart(request, product_id):
 #     if request.user.is_authenticated:
 #         if request.headers.get('x-requested-with') == 'XMLHttpRequest':
-#             # Check if the food item exists
+#             # Check if the product item exists
 #             try:
-#                 fooditem = FoodItem.objects.get(id=food_id)
+#                 productitem = ProductItem.objects.get(id=product_id)
 #                 # Check if the user has already added that food to the cart
 #                 try:
-#                     chkCart = Cart.objects.get(user=request.user, fooditem=fooditem)
+#                     chkCart = Cart.objects.get(user=request.user, productitem=productitem)
 #                     # Increase the cart quantity
 #                     chkCart.quantity += 1
 #                     chkCart.save()
 #                     return JsonResponse({'status': 'Success', 'message': 'Increased the cart quantity', 'cart_counter': get_cart_counter(request), 'qty': chkCart.quantity, 'cart_amount': get_cart_amounts(request)})
 #                 except:
-#                     chkCart = Cart.objects.create(user=request.user, fooditem=fooditem, quantity=1)
-#                     return JsonResponse({'status': 'Success', 'message': 'Added the food to the cart', 'cart_counter': get_cart_counter(request), 'qty': chkCart.quantity, 'cart_amount': get_cart_amounts(request)})
+#                     chkCart = Cart.objects.create(user=request.user, productitem=productitem, quantity=1)
+#                     return JsonResponse({'status': 'Success', 'message': 'Added the product to the cart', 'cart_counter': get_cart_counter(request), 'qty': chkCart.quantity, 'cart_amount': get_cart_amounts(request)})
 #             except:
-#                 return JsonResponse({'status': 'Failed', 'message': 'This food does not exist!'})
+#                 return JsonResponse({'status': 'Failed', 'message': 'This product does not exist!'})
 #         else:
 #             return JsonResponse({'status': 'Failed', 'message': 'Invalid request!'})
         
 #     else:
 #         return JsonResponse({'status': 'login_required', 'message': 'Please login to continue'})
+    
 
 
 # def decrease_cart(request, food_id):

@@ -16,15 +16,15 @@
 			</div> <!-- img-wrap.// -->
 			<figcaption class="info-wrap">
 				<div class="fix-height">
-					<a href="{{ product.get_url }}" class="title">{{ product.product_title }}</a>
-					{% comment %} <div class="price-wrap mt-2">
-						<span class="price">$ {{ product.price }}</span>
+					<a href="{{ product.get_url }}" class="title text-uppercase">{{ product.product_title }}</a>
+					<div class="price-wrap mt-2">
+						<span class="price font-weight-bold">frw {{ product.price }}</span>
 					</div> <!-- price-wrap.// -->
                     <div class="price-wrap mt-2">
-						<span class="price">Company:{{ product.vendor }}</span>
-					</div> <!-- price-wrap.// --> {% endcomment %}
+						<span><p class="text-center">{{ product.description }}</P></span>
+					</div> <!-- price-wrap.// -->
 				</div>
-				<a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Details </a>
+				{% comment %} <a href="{{ product.get_url }}" class="btn btn-outline-danger text-uppercase font-weight-bold">Buy </a> {% endcomment %}
 			</figcaption>
 		</figure>
 	</div> <!-- col.// -->
